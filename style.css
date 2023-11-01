@@ -1,0 +1,23 @@
+body { text-align:center}
+.fa.icone {
+    font-size: 46px;
+    color: #A4A5A6;
+    opacity: 1;
+    animation: anima 1500ms ease infinite;
+}
+@keyframes anima {
+    to {
+        opacity: 0.1;
+        transform: scale(0.85) translateY(20px);
+    }
+}
+
+body{
+    background-color: #262626;
+}
+
+#log {
+    color: #A4A5A6;
+    font-size: 140px;
+    text-transform: uppercase;
+}
