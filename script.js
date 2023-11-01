@@ -1,10 +1,44 @@
-//Função surgir texto
-function typeWritter(texto,idElemento,tempo){
-    var char = texto.split('').reverse();
-    var typer = setInterval(function () {
-        if (!char.length) return clearInterval(typer);
-        var next = char.pop();
-        document.getElementById(idElemento).innerHTML += next;
-    }, tempo);
-}
-typeWritter('Bem-vindo ao meu portfólio__','log',250)
+function typeWriter(text, elementId, speed) {
+    const textElement = document.getElementById(elementId);
+    let textIndex = 0;
+    let isDeleting = false;
+  
+    function type() {
+      const currentText = text.substring(0, textIndex);
+      textElement.textContent = currentText;
+      textIndex++;
+  
+      if (currentText === text) {
+        isDeleting = true;
+        setTimeout(erase, 1000); // Aguarda 1 segundo antes de apagar o texto
+      }
+    }
+  
+    function erase() {
+      const currentText = text.substring(0, textIndex);
+      textElement.textContent = currentText;
+      textIndex--;
+  
+      if (currentText === '') {
+        isDeleting = false;
+        textIndex = 0;
+      }
+  
+      if (!isDeleting) {
+        setTimeout(type, speed);
+      } else {
+        setTimeout(erase, speed);
+      }
+    }
+  
+    setInterval(function() {
+      if (!isDeleting && textIndex <= text.length) {
+        type();
+      } else if (isDeleting && textIndex >= 0) {
+        erase();
+      }
+    }, speed);
+  }
+  
+  typeWriter('Bem-vindo ao meu portfólio__', 'log', 250);
+  
