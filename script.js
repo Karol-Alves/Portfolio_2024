@@ -10,7 +10,7 @@ function typeWriter(text, elementId, speed) {
   
       if (currentText === text) {
         isDeleting = true;
-        setTimeout(erase, 1000); // Aguarda 1 segundo antes de apagar o texto
+        setTimeout(erase, 1000); 
       }
     }
   
