@@ -40,5 +40,5 @@ function typeWriter(text, elementId, speed) {
     }, speed);
   }
   
-  typeWriter('Bem-vindo ao meu portfólio__', 'log', 250);
+  typeWriter('Bem-vindo ao meu portfólio__', 'log', 300);
   

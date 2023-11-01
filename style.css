@@ -37,8 +37,9 @@ body{
 /*conteudo*/
 #log {
     color: #A4A5A6;
-    font-size: 100px;
+    font-size: 130px;
     text-transform: uppercase;
+    padding: 0.3em;
 }
 
 /*Flecha
